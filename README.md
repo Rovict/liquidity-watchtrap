@@ -1,6 +1,6 @@
 # Rugwatch — Drosera Trap for On-Chain Anomaly Detection
 
-This repository implements **Rugwatch**, a Drosera trap and operator integration designed to monitor token / liquidity anomalies on an EVM chain, detect slippage events or other suspicious behavior, and respond accordingly.
+This repository implements **liquiditywatch**, a Drosera trap and operator integration designed to monitor token / liquidity anomalies on an EVM chain, detect slippage events or other suspicious behavior, and respond accordingly.
 
 ---
 
@@ -17,7 +17,7 @@ In short: Rugwatch is your “watchtower” on-chain, programmed to sound the al
 
 ## 🧩 Architecture & Components
 
-### 1. Trap Contract (`rugwatch`)
+### 1. Trap Contract (`liquiditywatch`)
 - Deployed to the target chain.
 - Implements Drosera's required interface (e.g. `collect()`, `shouldRespond(...)`) so the operator can query and evaluate it.
 - Contains parameters (thresholds, intervals, addresses) governing detection logic.
@@ -60,12 +60,3 @@ In short: Rugwatch is your “watchtower” on-chain, programmed to sound the al
 
 5. **Updates & Reconfiguration**  
    You can change thresholds, response addresses, or trap parameters by re-applying via `drosera apply`, which updates on-chain trap config. The operator picks up that change in subsequent blocks.
-
----
-
-## 🧰 Usage & Deployment Summary
-
-1. Clone this repo:
-   ```bash
-   git clone https://github.com/rossybear/drosera-rugwatch.git
-   cd drosera-rugwatch
